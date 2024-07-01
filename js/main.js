@@ -20,9 +20,6 @@ $(document).ready(function() {
   // Display hi-score list
   displayHighScores();
 
-  // Display current level
-  updateLevelDisplay();
-
   // Generate the board
   function generateBoard() {
     gameBoard.empty();
