@@ -132,6 +132,17 @@ body {
   text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
 }
 
+#level-display {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 20px;
+  position: absolute;
+  right: 20px;
+  text-align: center;
+  text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
+}
+
 /* version info */
 #version-info {
   bottom: 5px;

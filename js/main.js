@@ -2,8 +2,10 @@ $(document).ready(function() {
   const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'pink'];
   const boardSize = 10;
   let points = 0;
+  let currentlvl = 1;
   const gameBoard = $('#game-board');
   const pointsDisplay = $('#points-display');
+  const levelDisplay = $('#level-display');
   const success = new Audio('audio/success.mp3');
   const fail = new Audio('audio/fail.mp3');
   let highScores = [];
@@ -17,6 +19,9 @@ $(document).ready(function() {
 
   // Display hi-score list
   displayHighScores();
+
+  // Display current level
+  updateLevelDisplay();
 
   // Generate the board
   function generateBoard() {
@@ -152,24 +157,13 @@ $(document).ready(function() {
       success.play();
 
       swal("Great job!", "All dots cleared. Moving to next round.").then((value) => {
+        currentlvl++;
+        updateLevelDisplay();
         generateBoard();
 			});
 
     } else if (noMoreValidMoves()) {
-
-      //generateBoard();
-      //resetPoints();
-
-      //alert('Game over! No more valid moves.');
-      //resetGame();
-
       fail.play();
-
-      /*
-      swal("Game over!", "No more valid moves.").then((value) => {
-        resetGame();
-			});
-      */
 
       // Game over
       setTimeout(function(){
@@ -254,14 +248,14 @@ $(document).ready(function() {
   // Function to reset the game (back to easy level)
   function resetGame() {
     points = 0;
+    currentlvl = 1;
     updatePointsDisplay();
+    updateLevelDisplay();
     generateBoard();
   }
 
-  // Function to reset points
-  function resetPoints() {
-    points = 0;
-    updatePointsDisplay();
+  function updateLevelDisplay() {
+    levelDisplay.text('Lvl: ' + currentlvl);
   }
 
   // Update points display
@@ -354,6 +348,7 @@ $(document).ready(function() {
       shiftDown();
 
       updatePointsDisplay();
+      updateLevelDisplay();
 
       checkGameOver();
     }
