@@ -149,6 +149,31 @@ body {
   text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
 }
 
+/* menu */
+#menu {
+  bottom: 20px;
+  position: absolute;
+  right: 10px;
+}
+
+#menu li {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  display: block;
+  list-style-type: none;
+  margin-right: 20px;
+  margin-top: 10px;
+  padding: 2px 4px;
+}
+
+#menu li a {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
+}
+
 /* version info */
 #version-info {
   bottom: 5px;

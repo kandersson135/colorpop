@@ -9,6 +9,7 @@ $(document).ready(function() {
   const success = new Audio('audio/success.mp3');
   const fail = new Audio('audio/fail.mp3');
   let highScores = [];
+  const currentYear = new Date().getFullYear();
 
   // Sound files
   const sounds = [
@@ -350,4 +351,34 @@ $(document).ready(function() {
       checkGameOver();
     }
   });
+
+  // How-to-button
+  $('#how-to-button').click(function() {
+    swal("Game instructions", "ColorPop! is a colorful puzzle game. Click on groups of three or more connected dots of the same color to remove them and earn points. The more dots you remove in one click, the higher your score. When dots are removed, the dots above fall down, and dots shift to the center to fill gaps, keeping the board compact. \n\n Clear all the dots to advance to the next round with your score intact. If no more valid moves are left, the game is over, and you can save your score. Aim to beat your high score and enjoy the challenge!");
+  });
+
+  // Reset leaderboard button click
+  $('#reset-button').click(function() {
+    swal({
+      title: "Reset leaderboard?",
+      text: "Do you really want to reset the leaderboard?",
+      buttons: true,
+    })
+    .then((willReset) => {
+      if (willReset) {
+        localStorage.removeItem("cp-highScores");
+      	location.reload();
+      }
+    });
+  });
+
+  // Credits button
+  $('#credits-button').click(function() {
+    swal("Credits © " + currentYear, "This game is created by Kim Andersson.\n\nSpecial thanks to Annie for contributing with game ideas.");
+  });
+
+  //Disable right click
+	document.addEventListener("contextmenu", function (e) {
+		e.preventDefault();
+	}, false);
 });
