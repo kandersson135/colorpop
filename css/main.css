@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+
+body {
+  background: #2193b0;
+  background: -webkit-linear-gradient(to left, #6dd5ed, #2193b0);
+  background: linear-gradient(to left, #6dd5ed, #2193b0);
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  flex-direction: column;
+  align-items: center;
+}
+
+#game-title {
+  color: #fff;
+  font-family: "Lemon", serif;
+  margin-top: 20px;
+  position: absolute;
+  left: 20px;
+  text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
+}
+
+#game-board {
+  background: rgba(50, 50, 50, 0.9);
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 5px 5px 1px 1px rgba(100, 100, 100, 0.2);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(10, 40px); /* Adjust size for mobile */
+  grid-gap: 10px; /* Adjust gap for mobile */
+  margin-top: 20px;
+  padding: 10px;
+}
+
+#hiscore {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  left: 40px;
+  padding: 0 20px;
+  position: absolute;
+  top: 150px;
+}
+#hiscore-title {
+  color: #fff;
+  font-size: 18px;
+  text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
+  margin-bottom: -10px;
+}
+
+#hiscore-list {
+  list-style-type: none;
+  margin-left: -40px;
+}
+
+#hiscore-list li {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
+  margin-bottom: 5px;
+}
+
+.dot {
+  cursor: pointer;
+  width: 40px; /* Adjust size for mobile */
+  height: 40px; /* Adjust size for mobile */
+  border-radius: 50%;
+  box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+.dot.highlight {
+  transform: scale(1.1); /* Scale up for highlighting effect */
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  z-index: 10; /* Bring to front */
+}
+
+.dot.clicked {
+  animation: pop 0.3s ease; /* Animation for click effect */
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Scale up to 1.2 at 50% of animation */
+    }
+    100% {
+        transform: scale(1); /* Back to normal scale at the end */
+    }
+}
+
+.red {
+    background-color: #fb4758;
+}
+
+.green {
+    background-color: #acd241;
+}
+
+.blue {
+    background-color: #50c4b7;
+}
+
+.yellow {
+    background-color: #ebcb35;
+}
+
+.purple {
+    background-color: #993399;
+}
+
+.pink {
+    background-color: #e472c4;
+}
+
+.empty {
+    background-color: transparent;
+    border: 1px solid transparent;
+    box-shadow: none;
+}
+
+#points-display {
+  color: #fff;
+  font-size: 42px;
+  font-weight: 700;
+  margin-top: 20px;
+  text-align: center;
+  text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
+}
+
+/* version info */
+#version-info {
+  bottom: 5px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 8px;
+  position: absolute;
+  left: 10px;
+}
+
+/* modal box */
+.swal-modal {
+  background: #2193b0;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+}
+
+.swal-title {
+  color: #fff;
+  font-family: "Lemon", serif;
+  text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
+}
+
+.swal-text {
+  color: #fff;
+  font-size: 18px;
+}
+
+.swal-button {
+	background: rgba(50, 50, 50, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 18px;
+  padding: 5px 20px;
+}
+.swal-button:focus {box-shadow:none;}
+.swal-button:hover {background: rgba(50, 50, 50, 0.3) !important;}
+.swal-button:active {background: rgba(50, 50, 50, 0.3); rgba(50, 50, 50, 0.2)box-shadow:none; position:relative; top:2px;}
+
+@media (max-width: 768px) {
+  #game-title {
+    color: #fff;
+    font-family: "Lemon", serif;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    left: 0;
+    display: none;
+  }
+
+  #hiscore {
+    display: none;
+  }
+
+  #points-display {
+    font-size: 32px;
+  }
+
+  #game-board {
+    border-radius: 15px;
+    grid-template-columns: repeat(10, 22px);
+    margin-top: 50px;
+  }
+
+  .dot {
+    width: 22px;
+    height: 22px;
+  }
+
+  .swal-modal {
+    margin-top: -200px !important;
+  }
+
+  .swal-title {
+    font-size: 22px;
+  }
+
+  .swal-text {
+    font-size: 14px;
+  }
+}
