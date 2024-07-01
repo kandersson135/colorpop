@@ -279,16 +279,16 @@ $(document).ready(function() {
   }
 
   // Function to check if the board is cleared
-    function isBoardCleared() {
-        for (let col = 0; col < boardSize; col++) {
-            for (let row = 0; row < boardSize; row++) {
-                if (getColor(col, row) !== 'empty') {
-                    return false;
-                }
-            }
+  function isBoardCleared() {
+    for (let col = 0; col < boardSize; col++) {
+      for (let row = 0; row < boardSize; row++) {
+        if (getColor(col, row) !== 'empty') {
+          return false;
         }
-        return true;
+      }
     }
+    return true;
+  }
 
   // Hover event handler to highlight matching dots
   gameBoard.on('mouseenter', '.dot', function() {
