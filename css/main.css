@@ -221,7 +221,6 @@ body {
 .swal-content input[type="text"] {
   border: 1px solid transparent;
   border-radius: 5px !important;
-  box-shadow: 2px 2px 1px 1px rgba(255, 255, 255, 0.4);
 }
 
 .swal-content input[type="text"]:focus {
