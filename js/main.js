@@ -21,6 +21,55 @@ $(document).ready(function() {
   // Display hi-score list
   displayHighScores();
 
+  // Array of all possible colors
+  const allColors = ['red', 'green', 'blue', 'yellow', 'pink'];
+
+  // Function to shuffle an array
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  // Function to get colors based on points
+  function getColorsBasedOnPoints(points) {
+    let numColors;
+
+    if (points < 9000) {
+      numColors = 2; // Easy level
+    } else if (points < 12000) {
+      numColors = 3; // Medium level
+    } else if (points < 15000) {
+      numColors = 4; // Hard level
+    } else {
+      numColors = 5; // Very Hard level
+    }
+
+    // Shuffle the array of all possible colors
+    shuffleArray(allColors);
+
+    // Select the first `numColors` from the shuffled array
+    return allColors.slice(0, numColors);
+  }
+
+  // Generate the board
+  function generateBoard() {
+    gameBoard.empty();
+
+    // Get the colors based on points
+    let colors = getColorsBasedOnPoints(points);
+
+    // Populate the board with dots
+    for (let i = 0; i < boardSize * boardSize; i++) {
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const dot = $('<div class="dot"></div>').addClass(color);
+      gameBoard.append(dot);
+    }
+  }
+
+
+  /*
   // Generate the board
   function generateBoard() {
     gameBoard.empty();
@@ -42,6 +91,7 @@ $(document).ready(function() {
       gameBoard.append(dot);
     }
   }
+  */
 
   // Initialize the board
   generateBoard();
