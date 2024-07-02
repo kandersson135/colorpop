@@ -258,8 +258,7 @@ body {
   }
 
   #version-info {
-    right: 10px;
-    left: inherit;
+    display: none;
   }
 
   #points-display {
@@ -272,7 +271,7 @@ body {
   }
 
   #menu {
-    bottom: 155px;
+    bottom: 0px;
   }
 
   #menu li {
