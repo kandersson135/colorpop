@@ -1,0 +1,16 @@
+{
+  "name": "ColorPop!",
+  "short_name": "ColorPop!",
+  "description": "ColorPop! is a colorful puzzle game.",
+  "icons": [
+    {
+      "src": "img/webapp-icon.png",
+      "sizes": "500x500",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#2193b0",
+  "theme_color": "#2193b0"
+}
