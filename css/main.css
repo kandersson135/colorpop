@@ -139,6 +139,16 @@ body {
   text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
 }
 
+#points {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+#points.updated {
+  transform: scale(1.2);
+  opacity: 0.5;
+}
+
 #level-display {
   color: #fff;
   font-size: 28px;

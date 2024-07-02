@@ -262,7 +262,20 @@ $(document).ready(function() {
 
   // Update points display
   function updatePointsDisplay() {
-    pointsDisplay.text(`${points}p`);
+    //pointsDisplay.text(`${points}p`);
+
+    const pointsElement = $('#points');
+
+      // Update points
+      pointsElement.text(points);
+
+      // Add the 'updated' class for animation
+      pointsElement.addClass('updated');
+
+      // Remove the 'updated' class after the animation ends
+      setTimeout(() => {
+        pointsElement.removeClass('updated');
+      }, 200); // Match this duration with the CSS transition time
   }
 
   // Calculate points based on number of dots removed
