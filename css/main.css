@@ -293,8 +293,8 @@ body {
 
   .dot {
     box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.4);
-    height: 22px;
-    width: 22px;
+    height: 26px;
+    width: 26px;
   }
 
   .empty {
