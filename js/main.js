@@ -26,11 +26,11 @@ $(document).ready(function() {
     gameBoard.empty();
 
     let colors = [];
-    if (points < 7000) {
+    if (points < 9000) {
         colors = ['red', 'green']; // Easy level
-    } else if (points < 10000) {
+    } else if (points < 12000) {
         colors = ['red', 'green', 'blue']; // Medium level
-    } else if (points < 13000) {
+    } else if (points < 15000) {
         colors = ['red', 'green', 'blue', 'yellow']; // Hard level
     } else {
         colors = ['red', 'green', 'blue', 'yellow', 'pink']; // Very Hard level
