@@ -251,8 +251,7 @@ body {
 
   #hiscore {
     position absolute;
-    top: inherit;
-    bottom: 180px;
+    top: 520px;
     left: 10px;
     width: 140px;
   }
