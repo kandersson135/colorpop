@@ -218,6 +218,7 @@ $(document).ready(function() {
         swal({
           title: "Game over!",
           text: "No more valid moves.",
+          closeOnClickOutside: false,
           content: {
             element: "input",
             attributes: {
