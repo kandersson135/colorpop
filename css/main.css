@@ -251,10 +251,12 @@ body {
   }
 
   #hiscore {
-    position absolute;
-    top: 520px;
-    left: 10px;
-    width: 150px;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 200px;
   }
 
   #version-info {
@@ -271,6 +273,7 @@ body {
   }
 
   #menu {
+    position: relative;
     bottom: 0px;
   }
 
