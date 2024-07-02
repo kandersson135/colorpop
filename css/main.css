@@ -241,6 +241,7 @@ body {
 .swal-button:hover {background: rgba(50, 50, 50, 0.3) !important;}
 .swal-button:active {background: rgba(50, 50, 50, 0.3); rgba(50, 50, 50, 0.2)box-shadow:none; position:relative; top:2px;}
 
+/* for mobile */
 @media (max-width: 768px) {
   #game-title {
     position: absolute;
@@ -254,6 +255,11 @@ body {
     top: 520px;
     left: 10px;
     width: 140px;
+  }
+
+  #version-info {
+    right: 10px;
+    left: inherit;
   }
 
   #points-display {
