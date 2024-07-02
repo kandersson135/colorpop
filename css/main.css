@@ -32,8 +32,8 @@ body {
   box-shadow: 5px 5px 1px 1px rgba(100, 100, 100, 0.2);
   border-radius: 20px;
   display: grid;
-  grid-template-columns: repeat(10, 40px); /* Adjust size for mobile */
-  grid-gap: 10px; /* Adjust gap for mobile */
+  grid-template-columns: repeat(10, 40px);
+  grid-gap: 10px;
   margin-top: 20px;
   padding: 10px;
 }
@@ -69,19 +69,19 @@ body {
 }
 
 .dot {
-  cursor: pointer;
-  width: 40px; /* Adjust size for mobile */
-  height: 40px; /* Adjust size for mobile */
   border-radius: 50%;
   box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  height: 40px;
   transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+  width: 40px;
 }
 
 .dot.highlight {
-  transform: scale(1.1); /* Scale up for highlighting effect */
+  transform: scale(1.1);
   border: 1px solid rgba(255, 255, 255, 0.6);
-  z-index: 10; /* Bring to front */
+  z-index: 10;
 }
 
 .dot.clicked {
