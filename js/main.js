@@ -240,6 +240,10 @@ $(document).ready(function() {
         listItem.textContent = `${index + 1}. ${score.name} - ${score.score}`;
         list.appendChild(listItem);
       });
+    } else {
+      const listItem = document.createElement('li');
+      listItem.textContent = "Leaderboard is empty";
+      list.appendChild(listItem);
     }
   }
 

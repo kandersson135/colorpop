@@ -48,6 +48,7 @@ body {
   top: 150px;
 }
 #hiscore-title {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
   color: #fff;
   font-size: 18px;
   text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
@@ -153,25 +154,31 @@ body {
 #menu {
   bottom: 20px;
   position: absolute;
-  right: 10px;
+  right: 20px;
 }
 
 #menu li {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
   display: block;
   list-style-type: none;
-  margin-right: 20px;
   margin-top: 10px;
-  padding: 2px 4px;
 }
 
 #menu li a {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
   color: rgba(255, 255, 255, 0.8);
+  display: block;
   font-weight: 600;
+  padding: 2px 4px;
   text-decoration: none;
   text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
+  width: 145px;
+}
+
+#menu li a:active {
+  position: relative;
+  top: 2px;
 }
 
 /* version info */
