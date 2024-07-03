@@ -8,6 +8,7 @@ $(document).ready(function() {
   const levelDisplay = $('#level-display');
   const success = new Audio('audio/success.mp3');
   const fail = new Audio('audio/fail.mp3');
+  const dropSound = new Audio('audio/bubbles1.mp3');
   let highScores = [];
   const currentYear = new Date().getFullYear();
 
@@ -83,6 +84,8 @@ $(document).ready(function() {
         });
       }, (dots.length - i - 1) * 3); // 3ms delay per dot
     }
+
+    dropSound.play();
   }
 
   // Generate the board
