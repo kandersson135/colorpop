@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
 
 body {
-  animation: fadein 2s;
   background: #2193b0;
   background: url("../img/bg.png"), -webkit-linear-gradient(to left, #6dd5ed, #2193b0);
   background: url("../img/bg.png"), linear-gradient(to left, #6dd5ed, #2193b0);
@@ -10,11 +9,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   flex-direction: column;
   align-items: center;
-}
-
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
 }
 
 #game-title {
@@ -76,6 +70,24 @@ body {
   height: 40px;
   transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
   width: 40px;
+  opacity: 0;
+}
+
+/* Define keyframes for the drop-in animation */
+@keyframes dropIn {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Add fall class to trigger the animation */
+.fall {
+  animation: dropIn 0.5s ease-in-out forwards;
 }
 
 .dot.highlight {

@@ -53,7 +53,40 @@ $(document).ready(function() {
     return allColors.slice(0, numColors);
   }
 
+  // Generate the board with a staggered animation effect
+  // 2024-07-03 v.2
+  function generateBoard() {
+    const gameBoard = $('#game-board');
+    gameBoard.empty();
+
+    // Get the colors based on points
+    let colors = getColorsBasedOnPoints(points);
+
+    const dots = [];
+
+    // Populate the board with dots
+    for (let i = 0; i < boardSize * boardSize; i++) {
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const dot = $('<div class="dot"></div>').addClass(color);
+      dots.push(dot);
+      gameBoard.append(dot);
+    }
+
+    // Apply the fall animation in reverse order
+    for (let i = dots.length - 1; i >= 0; i--) {
+      setTimeout(() => {
+        dots[i].addClass('fall');
+
+        // Remove the fall class and set opacity to 1 after the animation ends
+        dots[i].on('animationend', function() {
+          $(this).removeClass('fall').css('opacity', '1');
+        });
+      }, (dots.length - i - 1) * 3); // 3ms delay per dot
+    }
+  }
+
   // Generate the board
+  /* 2024-07-03
   function generateBoard() {
     gameBoard.empty();
 
@@ -67,9 +100,10 @@ $(document).ready(function() {
       gameBoard.append(dot);
     }
   }
+  */
 
 
-  /*
+  /* 2024-07-02
   // Generate the board
   function generateBoard() {
     gameBoard.empty();
@@ -204,12 +238,19 @@ $(document).ready(function() {
 
       success.play();
 
+      setTimeout(function(){
+        currentlvl++;
+        updateLevelDisplay();
+        generateBoard();
+      }, 300);
+
+      /*
       swal("Great job!", "All dots cleared. Moving to next round.").then((value) => {
         currentlvl++;
         updateLevelDisplay();
         generateBoard();
 			});
-
+      */
     } else if (noMoreValidMoves()) {
       fail.play();
 
