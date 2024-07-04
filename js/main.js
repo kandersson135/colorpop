@@ -366,7 +366,7 @@ $(document).ready(function() {
 
         // Create and append the rank cell
         const rankCell = document.createElement('td');
-        rankCell.textContent = index + 1;
+        rankCell.textContent = index + 1 + ".";
         row.appendChild(rankCell);
 
         // Create and append the name cell

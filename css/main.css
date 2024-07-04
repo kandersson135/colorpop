@@ -72,12 +72,12 @@ body {
   margin-top: 15px;
 }
 #leaderboardTable th, #leaderboardTable td {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   font-size: 12px;
   text-align: left;
   text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
-  padding: 5px;
+  padding: 2px 0px;
 }
 #leaderboardTable td:nth-child(1) {
   width: 10%;
