@@ -40,13 +40,16 @@ body {
   padding: 0 20px;
   position: absolute;
   top: 150px;
+  max-width: 200px;
+  min-width: 150px;
 }
+
 #hiscore-title {
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   color: #fff;
   font-size: 18px;
   text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
-  margin-bottom: -10px;
+  margin-bottom: -5px;
 }
 
 #hiscore-list {
