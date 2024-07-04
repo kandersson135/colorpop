@@ -27,7 +27,7 @@ body {
   border-radius: 20px;
   display: grid;
   grid-template-columns: repeat(10, 40px);
-  grid-gap: 10px;
+  grid-gap: 8px;
   margin-top: 20px;
   padding: 10px;
 }
