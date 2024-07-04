@@ -71,21 +71,23 @@ body {
   margin-bottom: 10px;
   margin-top: 15px;
 }
-#leaderboardTable th, #leaderboardTable td {
+#leaderboardTable td {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   font-size: 12px;
   text-align: left;
   text-shadow: 1px 1px 0px rgba(50, 50, 50, 0.2);
-  padding: 2px 0px;
+  padding: 4px 5px;
 }
 #leaderboardTable td:nth-child(1) {
+  font-weight: 600;
   width: 10%;
 }
 #leaderboardTable td:nth-child(2) {
   width: 70%;
 }
 #leaderboardTable td:nth-child(3) {
+  font-weight: 700;
   width: 20%;
   text-align: right;
 }
