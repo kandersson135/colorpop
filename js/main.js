@@ -314,6 +314,7 @@ $(document).ready(function() {
     }
   }
 
+  /*
   // Function to display high scores in a list
   function displayHighScores() {
     const list = document.getElementById('hiscore-list');
@@ -339,6 +340,56 @@ $(document).ready(function() {
       const listItem = document.createElement('li');
       listItem.textContent = "Leaderboard is empty";
       list.appendChild(listItem);
+    }
+  }*/
+
+
+  // Function to display high scores in a list
+  function displayHighScores() {
+    const leaderboardBody = document.getElementById('leaderboardBody');
+
+    // Clear existing list items
+    while (leaderboardBody.firstChild) {
+      leaderboardBody.firstChild.remove();
+    }
+
+    // Retrieve high scores from local storage
+    const savedHighScores = JSON.parse(localStorage.getItem('cp-highScores'));
+
+    if (savedHighScores) {
+      highScores = savedHighScores;
+
+      // Iterate through high scores and create list items
+      highScores.forEach((score, index) => {
+
+        const row = document.createElement('tr');
+
+        // Create and append the rank cell
+        const rankCell = document.createElement('td');
+        rankCell.textContent = index + 1;
+        row.appendChild(rankCell);
+
+        // Create and append the name cell
+        const nameCell = document.createElement('td');
+        nameCell.textContent = score.name;
+        row.appendChild(nameCell);
+
+        // Create and append the score cell
+        const scoreCell = document.createElement('td');
+        scoreCell.textContent = score.score;
+        scoreCell.style.textAlign = 'right'; // Ensure scores are right-aligned
+        row.appendChild(scoreCell);
+
+        // Append the row to the table body
+        leaderboardBody.appendChild(row);
+      });
+    } else {
+      const row = document.createElement('tr');
+      const cell = document.createElement('td');
+      cell.colSpan = 3;
+      cell.textContent = "Leaderboard is empty";
+      row.appendChild(cell);
+      leaderboardBody.appendChild(row);
     }
   }
 
