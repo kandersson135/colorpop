@@ -376,7 +376,7 @@ $(document).ready(function() {
 
         // Create and append the score cell
         const scoreCell = document.createElement('td');
-        scoreCell.textContent = score.score;
+        scoreCell.textContent = score.score + "p";
         scoreCell.style.textAlign = 'right'; // Ensure scores are right-aligned
         row.appendChild(scoreCell);
 
