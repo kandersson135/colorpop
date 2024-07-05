@@ -37,12 +37,12 @@ $(document).ready(function() {
   function getColorsBasedOnPoints(points) {
     let numColors;
 
-    if (points < 9000) {
-      numColors = 2; // Easy level
-    } else if (points < 12000) {
-      numColors = 3; // Medium level
+    if (points < 12000) {
+      numColors = 2; // Easy level 9000
     } else if (points < 15000) {
-      numColors = 4; // Hard level
+      numColors = 3; // Medium level 12000
+    } else if (points < 18000) {
+      numColors = 4; // Hard level 15000
     } else {
       numColors = 5; // Very Hard level
     }
