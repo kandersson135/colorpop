@@ -8,9 +8,13 @@ $(document).ready(function() {
   const levelDisplay = $('#level-display');
   const success = new Audio('audio/success.mp3');
   const fail = new Audio('audio/fail.mp3');
-  const dropSound = new Audio('audio/bubbles1.mp3');
+  const dropSound = new Audio('audio/bubbles.mp3');
+  const bgSound = new Audio('audio/bg.mp3');
   let highScores = [];
   const currentYear = new Date().getFullYear();
+  bgSound.volume = 0.3;
+  bgSound.loop = true;
+  bgSound.play();
 
   // Sound files
   const sounds = [
