@@ -1,5 +1,6 @@
 $(document).ready(function() {
   const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'pink'];
+  const onoff = localStorage.getItem("cp-music");
   const boardSize = 10;
   let points = 0;
   let currentlvl = 1;
@@ -89,7 +90,8 @@ $(document).ready(function() {
       }, (dots.length - i - 1) * 3); // 3ms delay per dot
     }
 
-    dropSound.play();
+    //dropSound.play();
+    localStorage.getItem("cp-music") === "on" && dropSound.play();
   }
 
   // Generate the board
@@ -243,7 +245,8 @@ $(document).ready(function() {
       //alert('Great job! All dots cleared. Moving to next round.');
       //generateBoard();
 
-      success.play();
+      //success.play();
+      localStorage.getItem("cp-music") === "on" && success.play();
 
       setTimeout(function(){
         currentlvl++;
@@ -259,7 +262,8 @@ $(document).ready(function() {
 			});
       */
     } else if (noMoreValidMoves()) {
-      fail.play();
+      //fail.play();
+      localStorage.getItem("cp-music") === "on" && fail.play();
 
       // Game over
       setTimeout(function(){
@@ -443,7 +447,8 @@ $(document).ready(function() {
   // Function to play a random pop sound
   function playPopSound() {
     const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
-    randomSound.play();
+    //randomSound.play();
+    localStorage.getItem("cp-music") === "on" && randomSound.play();
   }
 
   // Function to check if the board is cleared
@@ -516,6 +521,32 @@ $(document).ready(function() {
       updateLevelDisplay();
 
       checkGameOver();
+    }
+  });
+
+  // Sound button
+  if (onoff == "on") {
+    $("#sound-button span").text("Sound on");
+    $('#sound-button img').attr('src', 'img/speaker.png');
+  } else if (onoff == "off") {
+    $("#sound-button span").text("Sound off");
+    $('#sound-button img').attr('src', 'img/speaker-off.png');
+  } else {
+    $("#sound-button span").text("Sound on");
+    $('#sound-button img').attr('src', 'img/speaker.png');
+  }
+
+  // Sound button click
+  $('#sound-button').click(function() {
+    if (onoff == "on") {
+      localStorage.setItem("cp-music", "off");
+      location.reload();
+    } else if (onoff == "off") {
+      localStorage.setItem("cp-music", "on");
+      location.reload();
+    } else {
+      localStorage.setItem("cp-music", "off");
+      location.reload();
     }
   });
 

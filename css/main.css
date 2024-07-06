@@ -235,6 +235,12 @@ body {
   top: 2px;
 }
 
+#menu li a img {
+  width: 20px;
+  position: relative;
+  top: 4px;
+}
+
 /* version info */
 #version-info {
   bottom: 5px;
