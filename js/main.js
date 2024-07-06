@@ -14,7 +14,7 @@ $(document).ready(function() {
   const currentYear = new Date().getFullYear();
   bgSound.volume = 0.3;
   bgSound.loop = true;
-  bgSound.play();
+  //bgSound.play();
 
   // Sound files
   const sounds = [
