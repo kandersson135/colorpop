@@ -449,7 +449,7 @@ $(document).ready(function() {
     const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
     //randomSound.play();
     localStorage.getItem("cp-music") === "on" && randomSound.play();
-    navigator.vibrate(50);
+    navigator.vibrate(30);
   }
 
   // Function to check if the board is cleared
