@@ -291,7 +291,7 @@ body {
 .swal-button:active {background: rgba(50, 50, 50, 0.3); rgba(50, 50, 50, 0.2)box-shadow:none; position:relative; top:2px;}
 
 /* for mobile */
-@media (max-width: 768px) {
+@media (min-width: 360px) and (max-width: 768px) {
   #game-title {
     display: none;
   }
