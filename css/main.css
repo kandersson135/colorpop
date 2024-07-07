@@ -297,6 +297,7 @@ body {
     left: 10px;
     font-size: 22px;
     margin-top: 0px;
+    display: none;
   }
 
   #hiscore {
@@ -314,11 +315,12 @@ body {
 
   #points-display {
     font-size: 32px;
-    margin-top: 50px;
+    margin-top: 10px;
   }
 
   #level-display {
-    margin-top: 50px;
+    font-size: 20px;
+    margin-top: 10px;
   }
 
   #menu {
@@ -326,24 +328,20 @@ body {
     bottom: 0px;
   }
 
-  #menu li {
-    font-size: 12px;
-  }
-
   #menu li a {
-    width: 110px;
+    width: 145px;
   }
 
   #game-board {
     border-radius: 15px;
-    grid-template-columns: repeat(10, 22px);
+    grid-template-columns: repeat(10, 24px);
     margin-top: 20px;
   }
 
   .dot {
     box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.4);
-    height: 26px;
-    width: 26px;
+    height: 24px;
+    width: 24px;
   }
 
   .empty {

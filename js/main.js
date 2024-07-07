@@ -247,6 +247,7 @@ $(document).ready(function() {
 
       //success.play();
       localStorage.getItem("cp-music") === "on" && success.play();
+      navigator.vibrate(50);
 
       setTimeout(function(){
         currentlvl++;
