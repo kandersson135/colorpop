@@ -370,8 +370,7 @@ body {
   and (min-width: 748px)
   and (max-width: 748px)
   and (min-height: 720px)
-  and (max-height: 720px)
-  and (orientation: portrait) {
+  and (max-height: 720px) {
   /* Your styles here */
   #hiscore {
     display: none;
