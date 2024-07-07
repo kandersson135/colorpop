@@ -385,6 +385,12 @@ body {
     height: 40px;
     width: 40px;
   }
+
+  .empty {
+    background-color: transparent;
+    border: 1px solid transparent;
+    box-shadow: none;
+  }
 }
 
 /* iPad styles */
