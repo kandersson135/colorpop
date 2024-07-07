@@ -450,6 +450,12 @@ $(document).ready(function() {
     //randomSound.play();
     localStorage.getItem("cp-music") === "on" && randomSound.play();
     //navigator.vibrate(30);
+
+    // Check if the device supports vibration
+    if ("vibrate" in navigator) {
+      // Execute vibration code
+      navigator.vibrate(10); // Vibrate for 200 milliseconds
+    }
   }
 
   // Function to check if the board is cleared
