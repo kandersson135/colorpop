@@ -364,7 +364,6 @@ body {
 }
 
 /* iPad styles */
-/*
 @media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
   #game-title {
     display: none;
@@ -387,4 +386,3 @@ body {
     left: 40px;
   }
 }
-*/
