@@ -363,7 +363,7 @@ body {
   }
 }
 
-/* galaxy cover screen test /*
+/* galaxy cover screen test */
 @media only screen and (min-device-width: 720px) and (max-device-width: 748px) and (orientation: landscape) {
   #hiscore {
     display: none;
