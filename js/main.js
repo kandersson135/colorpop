@@ -449,7 +449,6 @@ $(document).ready(function() {
     const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
     //randomSound.play();
     localStorage.getItem("cp-music") === "on" && randomSound.play();
-    //navigator.vibrate(30);
 
     // Check if the device supports vibration
     if ("vibrate" in navigator) {
