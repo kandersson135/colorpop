@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+  <div id="screenSize"></div>
 
   <h1 id="game-title">ColorPop!</h1><!-- end game-title -->
   <div id="points-display"><span id="points">0</span>p</div><!-- end points-display -->
@@ -48,5 +49,24 @@
   <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/sweetalert.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+      function displayScreenSize() {
+          const width = window.screen.width;
+          const height = window.screen.height;
+          const orientation = (width > height) ? 'Landscape' : 'Portrait';
+
+          document.getElementById('screenSize').innerHTML = `
+              Screen Width: ${width}px <br>
+              Screen Height: ${height}px <br>
+              Orientation: ${orientation}
+          `;
+      }
+
+      // Call the function to display the screen size
+      displayScreenSize();
+
+      // Optional: Update the screen size if the window is resized
+      window.addEventListener('resize', displayScreenSize);
+  </script>
 </body>
 </html>
