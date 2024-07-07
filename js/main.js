@@ -1,6 +1,6 @@
 $(document).ready(function() {
   const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'pink'];
-  const onoff = localStorage.getItem("cp-music");
+  const onoff = localStorage.getItem("cp-music") || (localStorage.setItem("cp-music", "on"), "on");
   const boardSize = 10;
   let points = 0;
   let currentlvl = 1;
