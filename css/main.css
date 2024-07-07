@@ -363,6 +363,30 @@ body {
   }
 }
 
+/* galaxy cover screen test /*
+@media only screen and (min-device-width: 720px) and (max-device-width: 748px) and (orientation: landscape) {
+  #hiscore {
+    display: none;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  #game-board {
+    border-radius: 15px;
+    box-shadow: 3px 3px 1px 1px rgba(100, 100, 100, 0.2);
+    grid-template-columns: repeat(10, 40px);
+    margin-top: 20px;
+  }
+
+  .dot {
+    box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.4);
+    height: 40px;
+    width: 40px;
+  }
+}
+
 /* iPad styles */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
   #game-title {
