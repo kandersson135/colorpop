@@ -291,7 +291,6 @@ body {
 .swal-button:active {background: rgba(50, 50, 50, 0.3); rgba(50, 50, 50, 0.2)box-shadow:none; position:relative; top:2px;}
 
 /* for mobile */
-/*
 @media (max-width: 768px) {
   #game-title {
     display: none;
@@ -363,7 +362,6 @@ body {
     margin-top: -10px !important;
   }
 }
-*/
 
 /* galaxy cover screen test */
 @media only screen
@@ -391,12 +389,7 @@ body {
     box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.4);
     height: 40px;
     width: 40px;
-  }
-
-  .empty {
-    background-color: transparent;
-    border: 1px solid transparent;
-    box-shadow: none;
+    display: none;
   }
 }
 
