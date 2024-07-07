@@ -293,10 +293,6 @@ body {
 /* for mobile */
 @media (max-width: 768px) {
   #game-title {
-    position: absolute;
-    left: 10px;
-    font-size: 22px;
-    margin-top: 0px;
     display: none;
   }
 
@@ -364,5 +360,29 @@ body {
   .swal-text {
     font-size: 14px;
     margin-top: -10px !important;
+  }
+}
+
+/* iPad styles */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape) {
+  #game-title {
+    display: none;
+  }
+
+  #hiscore {
+    left: 20px;
+    position: absolute;
+    top: 150px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: portrait) {
+  #game-title {
+    display: none;
+  }
+
+  #hiscore {
+    top: 700px;
+    left: 40px;
   }
 }
