@@ -30,6 +30,7 @@ body {
   grid-gap: 8px;
   margin-top: 20px;
   padding: 10px;
+  cursor: url(../img/cursor.png), auto;
 }
 
 #hiscore {
@@ -96,7 +97,7 @@ body {
   border-radius: 50%;
   box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.4);
-  cursor: pointer;
+  /*cursor: pointer;*/
   height: 40px;
   transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
   width: 40px;
