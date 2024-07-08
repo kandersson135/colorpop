@@ -556,6 +556,21 @@ $(document).ready(function() {
     }
   });
 
+  // Fullscreen button
+  $('#fullscreen-button').click(function() {
+    const gameContainer = $('html')[0]; // Get the DOM element
+
+	  if (gameContainer.requestFullscreen) {
+	      gameContainer.requestFullscreen();
+	  } else if (gameContainer.mozRequestFullScreen) { /* Firefox */
+	      gameContainer.mozRequestFullScreen();
+	  } else if (gameContainer.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+	      gameContainer.webkitRequestFullscreen();
+	  } else if (gameContainer.msRequestFullscreen) { /* IE/Edge */
+	      gameContainer.msRequestFullscreen();
+	  }
+  });
+
   // How-to-button
   $('#how-to-button').click(function() {
     swal("Game instructions", "ColorPop! is a colorful puzzle game. Click on groups of three or more connected dots of the same color to remove them and earn points. The more dots you remove in one click, the higher your score. \n\n Clear all the dots to advance to the next round with your score intact. If no more valid moves are left, the game is over, and you can save your score. Aim to beat your high score and enjoy the challenge!");
