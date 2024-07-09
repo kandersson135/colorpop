@@ -25,7 +25,6 @@ body {
   border: 5px solid rgba(255, 255, 255, 0.1);
   box-shadow: 5px 5px 1px 1px rgba(100, 100, 100, 0.2);
   border-radius: 20px;
-  cursor: url(../img/cursor.png), auto;
   display: grid;
   grid-template-columns: repeat(10, 40px);
   grid-gap: 8px;
@@ -98,10 +97,15 @@ body {
   box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.4);
   /*cursor: pointer;*/
+  cursor: url(../img/cursor.png), auto;
   height: 40px;
   transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
   width: 40px;
   opacity: 0;
+}
+
+.dot:active {
+  cursor: url(../img/cursor2.png), auto;
 }
 
 /* Define keyframes for the drop-in animation */
