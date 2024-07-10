@@ -9,7 +9,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   flex-direction: column;
   align-items: center;
-  overscroll-behavior: none;
+  overscroll-behavior: none; /* prevent pull to refresh on android */
 }
 
 #game-title {
