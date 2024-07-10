@@ -380,6 +380,7 @@ body {
     left: 20px;
     position: absolute;
     top: 150px;
+    max-width: 200px;
   }
 
   #leaderboardTable td {
