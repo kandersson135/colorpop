@@ -334,13 +334,17 @@ body {
     margin-bottom: 10px;
     margin-top: 20px;
     position: relative;
-    width: 220px;
+    width: 175px;
   }
 
   #menu li {
       display: inline !important;
       float: left;
       margin-left: 6px;
+  }
+
+  #menu li:first-child {
+    display: none !important;
   }
 
   #menu li a img {
