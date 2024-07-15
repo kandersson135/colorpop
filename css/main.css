@@ -331,6 +331,7 @@ body {
   #menu {
     bottom: 00px;
     margin: 0 auto;
+    margin-bottom: 10px;
     margin-top: 20px;
     position: relative;
     width: 220px;
