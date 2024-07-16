@@ -87,7 +87,7 @@ $(document).ready(function() {
         dots[i].on('animationend', function() {
           $(this).removeClass('fall').css('opacity', '1');
         });
-      }, (dots.length - i - 1) * 3); // 3ms delay per dot
+      }, (dots.length - i - 1) * 5); // 5ms delay per dot
     }
 
     //dropSound.play();
