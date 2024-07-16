@@ -172,6 +172,7 @@ $(document).ready(function() {
     return matches;
   }
 
+  /* 2024-07-17
   // Function to shift down dots in a column and close gaps
   function shiftDown() {
     for (let col = 0; col < boardSize; col++) {
@@ -201,6 +202,62 @@ $(document).ready(function() {
       }
     }
   }
+  */
+
+  // Function to shift down dots in a column and close gaps
+  function shiftDown() {
+    for (let col = 0; col < boardSize; col++) {
+      let emptySlots = 0;
+      for (let row = boardSize - 1; row >= 0; row--) {
+        const color = getColor(col, row);
+        if (color === 'empty') {
+          emptySlots++;
+        } else if (emptySlots > 0) {
+          setColor(col, row + emptySlots, color);
+          setColor(col, row, 'empty');
+        }
+      }
+    }
+
+    // Collect all non-empty columns
+    let nonEmptyColumns = [];
+    for (let col = 0; col < boardSize; col++) {
+      if (getColor(col, boardSize - 1) !== 'empty') {
+        nonEmptyColumns.push(col);
+      }
+    }
+
+    // Calculate the offset to center the columns
+    const totalNonEmptyColumns = nonEmptyColumns.length;
+    const totalEmptyColumns = boardSize - totalNonEmptyColumns;
+    const offset = Math.floor(totalEmptyColumns / 2);
+
+    // Shift columns to center them
+    let targetCol = offset;
+    for (let i = 0; i < nonEmptyColumns.length; i++) {
+      const sourceCol = nonEmptyColumns[i];
+      if (targetCol !== sourceCol) {
+        for (let row = 0; row < boardSize; row++) {
+          const color = getColor(sourceCol, row);
+          setColor(targetCol, row, color);
+          setColor(sourceCol, row, 'empty');
+        }
+      }
+      targetCol++;
+    }
+  }
+
+  // Function to get the color of a dot at (col, row)
+  function getColor(col, row) {
+    return $(`#game-board .dot:nth-child(${row * boardSize + col + 1})`).attr('class').split(' ')[1];
+  }
+
+  // Function to set the color of a dot at (col, row)
+  function setColor(col, row, color) {
+    const dot = $(`#game-board .dot:nth-child(${row * boardSize + col + 1})`);
+    dot.removeClass(dot.attr('class').split(' ').slice(1).join(' ')).addClass(color);
+  }
+
 
   // Check if all dots of a specific color are removed
   function checkWinningCondition(color) {
