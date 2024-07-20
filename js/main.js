@@ -172,7 +172,6 @@ $(document).ready(function() {
     return matches;
   }
 
-  /* 2024-07-17
   // Function to shift down dots in a column and close gaps
   function shiftDown() {
     for (let col = 0; col < boardSize; col++) {
@@ -202,8 +201,8 @@ $(document).ready(function() {
       }
     }
   }
-  */
 
+  /* Shift down and to the center
   // Function to shift down dots in a column and close gaps
   function shiftDown() {
     for (let col = 0; col < boardSize; col++) {
@@ -257,6 +256,7 @@ $(document).ready(function() {
     const dot = $(`#game-board .dot:nth-child(${row * boardSize + col + 1})`);
     dot.removeClass(dot.attr('class').split(' ').slice(1).join(' ')).addClass(color);
   }
+  */
 
 
   // Check if all dots of a specific color are removed
