@@ -375,7 +375,7 @@ $(document).ready(function() {
             resetGame(); // User clicked cancel
           }
         });
-      }, 300);
+      }, 700);
     }
   }
 
