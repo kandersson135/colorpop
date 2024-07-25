@@ -18,11 +18,28 @@ $(document).ready(function() {
   //bgSound.play();
 
   // Sound files
+  /*
   const sounds = [
     new Audio('audio/pop1.mp3'),
     new Audio('audio/pop2.mp3'),
     new Audio('audio/pop3.mp3')
   ];
+  */
+
+  const soundUrls = [
+    'audio/pop1.mp3',
+    'audio/pop2.mp3',
+    'audio/pop3.mp3'
+  ];
+
+  // Preload audio files
+  const sounds = soundUrls.map(url => {
+    const audio = new Audio(url);
+    audio.addEventListener('canplaythrough', () => {
+      //console.log(`${url} is ready to play`);
+    }, false);
+    return audio;
+  });
 
   // Display hi-score list
   displayHighScores();
@@ -502,10 +519,32 @@ $(document).ready(function() {
   }
 
   // Function to play a random pop sound
+  /*
   function playPopSound() {
     const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
     //randomSound.play();
     localStorage.getItem("cp-music") === "on" && randomSound.play();
+
+    // Check if the device supports vibration
+    if ("vibrate" in navigator) {
+      // Execute vibration code
+      navigator.vibrate(10); // Vibrate for 200 milliseconds
+    }
+  }
+  */
+
+  function playPopSound() {
+    const randomIndex = Math.floor(Math.random() * soundUrls.length);
+    const randomSound = new Audio(soundUrls[randomIndex]);
+
+    //console.log(`Attempting to play sound: ${soundUrls[randomIndex]}`);
+    if (localStorage.getItem("cp-music") === "on") {
+      randomSound.play().catch(error => {
+        //console.error(`Error playing sound: ${error}`);
+      });
+    } else {
+      //console.log("Sound is turned off in localStorage");
+    }
 
     // Check if the device supports vibration
     if ("vibrate" in navigator) {
