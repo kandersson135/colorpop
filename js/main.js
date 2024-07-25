@@ -331,7 +331,7 @@ $(document).ready(function() {
           content: {
             element: "input",
             attributes: {
-              placeholder: "Enter your name:",
+              placeholder: "Enter a username for the leaderboard:",
               type: "text",
               id: "userNameInput"
             }
