@@ -430,3 +430,23 @@ body {
     display: none !important;
   }
 }
+
+@media only screen
+  and (min-width: 352px)
+  and (max-width: 352px)
+  and (min-height: 339px)
+  and (max-height: 339px) {
+    #game-title, #points-display, #level-display, #hiscore, #menu {
+      display: none;
+    }
+
+    #game-board {
+      grid-template-columns: repeat(10, 22px);
+      margin-top: 0px;
+    }
+
+    .dot {
+      height: 20px;
+      width: 20px;
+    }
+}
