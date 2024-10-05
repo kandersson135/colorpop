@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
 
 /* Remove tap highlight */
-a, img, button, input {
+a, img, button, input, .dot {
   -webkit-tap-highlight-color: transparent;
 }
 
